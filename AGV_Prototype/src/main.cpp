@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <Pixy2.h>
 
-#include "_parameter/GlobalVariable.h"
-#include "emergency_stop/EmergencyStop.h"
-#include "line_sensor/PixyLineSensor.h"
+#include <Parameters.h>
+#include <EmergencyStop.h>
+#include <PixyLineSensor.h>
 
 
 void setup() {
