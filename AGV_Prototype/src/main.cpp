@@ -5,7 +5,6 @@
 #include <EmergencyStop.h>
 #include <PixyLineSensor.h>
 
-
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
@@ -15,9 +14,5 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  pixy_read_line();
-  if (pixy.line.numVectors) 
-  {
-    Serial.println(pixy_read_line_value);
-  }
+  Serial.println(pixy_read_line());
 }
