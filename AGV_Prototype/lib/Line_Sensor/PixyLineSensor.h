@@ -7,7 +7,7 @@ void pixy_line_sensor_setup()
     Serial.println(pixy.changeProg("line"));
 }
 
-int pixy_read_line()
+double pixy_read_line()
 {
     // if (pixy.line.numVectors) 
     // {
@@ -15,6 +15,6 @@ int pixy_read_line()
     // }
     if (true)
     {
-        return map(analogRead(A0), 0, 1023, -10, 10);
+        return map(analogRead(A0), 0, 1023, -100, 100);
     }
 }
