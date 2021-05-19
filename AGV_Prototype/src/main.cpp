@@ -4,6 +4,7 @@
 #include <Parameters.h>
 #include <EmergencyStop.h>
 #include <PixyLineSensor.h>
+#include <PID.h>
 
 void setup() {
   // put your setup code here, to run once:
@@ -13,6 +14,14 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  Serial.println(pixy_read_line());
+
+  output_PID = hitung_PID(pixy_read_line());
+
+  Serial.print(-150);
+  Serial.print("\t");
+  Serial.print(pixy_read_line());
+  Serial.print("\t");
+  Serial.print(output_PID);
+  Serial.print("\t");
+  Serial.println(150);
 }
