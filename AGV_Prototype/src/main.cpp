@@ -5,6 +5,8 @@
 #include <EmergencyStop.h>
 #include <PixyLineSensor.h>
 #include <PID.h>
+#include <Motor.h>
+#include <LineFollower.h>
 
 void setup() {
   // put your setup code here, to run once:
@@ -16,12 +18,15 @@ void setup() {
 void loop() {
 
   output_PID = hitung_PID(pixy_read_line());
+  LineFollowerBasic(output_PID);
 
-  Serial.print(-150);
-  Serial.print("\t");
-  Serial.print(pixy_read_line());
+  Serial.print(-100);
   Serial.print("\t");
   Serial.print(output_PID);
   Serial.print("\t");
-  Serial.println(150);
+  Serial.print(SPEED_LEFT);
+  Serial.print("\t");
+  Serial.print(SPEED_RIGHT);
+  Serial.print("\t");
+  Serial.println(100);
 }
